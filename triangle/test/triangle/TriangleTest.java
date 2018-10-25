@@ -12,30 +12,8 @@ import static triangle.Triangle.Type.*;
 public class TriangleTest {
 
 	
-	//Coverage Tests
-    @Test
-    public void test1() {
-        Type actual = Triangle.classify(10, 10, 10);
-        Type expected = EQUILATERAL;
-        assertEquals(actual, expected);
-    }
+	//Statement Tests
     
-    @Test
-    public void test_statement() {
-    	
-    	
-    	//Test an invalid triangle condition
-    	Type actual = Triangle.classify(0,0,0);
-    	Type expected = INVALID;
-    	assertEquals(actual, expected);
-    	
-    	actual = Triangle.classify(1,1,1);
-    	
-    	expected = EQUILATERAL;
-    	
-    	assertEquals(actual,expected);
-    	
-    }
     
     @Test
     public void test_state_invalid(){
@@ -64,11 +42,31 @@ public class TriangleTest {
     }
     
     @Test
+    public void test_state_equilateral() {
+        Type actual = Triangle.classify(10, 10, 10);
+        Type expected = EQUILATERAL;
+        assertEquals(actual, expected);
+    }
+    
+    @Test
     public void test_state_scalene() {
     	Type actual = Triangle.classify(3,5,6);
     	Type expected = SCALENE;
     	
     	assertEquals(actual,expected);
+    	
+    }
+    
+    @Test
+    public void test_state_isosceles() {
+    	Type actual1 = Triangle.classify(3,5,5);
+    	Type actual2 = Triangle.classify(5,3,5);
+    	Type actual3 = Triangle.classify(5,5,3);
+    	Type expected = ISOSCELES;
+    	
+    	assertEquals(actual1,expected);
+    	assertEquals(actual2,expected);
+    	assertEquals(actual3,expected);
     	
     }
     
