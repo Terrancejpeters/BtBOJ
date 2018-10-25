@@ -1,9 +1,12 @@
+Terrance J Peters
+Lingqui Meng
+Shipeng Yu
+Ruifeng Zhang
+Thomas Blessing
 
-Question 1: For the coverage adequate test suite… (@Tommy Blessing) For mutation-adequate test suite, you find a live mutant, and write test case to kill it, in this process, the mutants cover rate increase until 100%, and mutant killed rate close to 100% (other group member who write coverage-adequate test suite discuss with us, to get answer.)
+Question 1: They do differ. For the coverage-adequate tests suites, you write the entire test suite in one go, by analyzing the code, creating a decision tree with every decision or conditional, determining the inputs that will give you 100%, and then coding those into a test. For mutation-adequate test suite, you find a live mutant, and write test case to kill it, in this process, the mutants cover rate increase until 100%, and mutant killed rate close to 100%.
 
-Question 2: @Tommy Blessing
-
-
+Question 2: Our coverage-adequate test suits do not detect all detectable mutants. Mutated code could cause these tests to fail. They were written with the statements and conditions contained in the code in mind. If these conditionals were changed in a mutation, it would likely reduce the coverage of the test suit. However, depending on the mutation, it is possible that the test suit could still achieve 100% coverage.
 
 Questions 3. some mutants are not detectable because even the code mutate, it still get same results, therefore, those mutant cannot be killed by test cases.
 
@@ -103,7 +106,7 @@ Question 4:
 
 
 
-Question5: for mutant detection rates, when you are deleting all the assertions, the mutants covered rate won't change, it still remains, but mutants score become 0, and killed number become 0.
+Question5: For mutant detection rates, when you are deleting all the assertions, the mutants covered rate won't change, it still remains, but mutants score become 0, and killed number become 0.
 
 question 6:
 Base on mutations analysis and test case redundancy, the test cases repeatedly testing some mutation. In other words, many test cases are able to kill same mutants. There are some test cases in my test suites are redundant. the methods to delete those redundant test cases only save the test cases that can kill unique mutants, remove all the repeat test cases.
